@@ -1,0 +1,22 @@
+# zellij's built-in compact-bar (default-plugins/compact-bar) with one change:
+# tab titles are prefixed with their number ("3:name"). The version tracks the
+# zellij release the sources were taken from.
+[package]
+name = "compact-bar"
+version = "0.45.1"
+edition = "2021"
+license = "MIT"
+description = "zellij's compact-bar status bar with numbered tabs"
+repository = "https://github.com/chent11/zellij-compact-bar"
+publish = false
+
+[dependencies]
+ansi_term = { version = "0.12.1", default-features = false }
+unicode-width = { version = "0.2.2", default-features = false }
+zellij-tile = "=0.45.1"
+zellij-tile-utils = "=0.45.1"
+
+[profile.release]
+lto = true
+strip = true
+opt-level = "s"
